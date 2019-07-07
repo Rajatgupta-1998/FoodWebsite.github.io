@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Food court</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="slider/engine1/style.css" />
+    <link rel="stylesheet" href="uikit-3.0.0-rc.9/css/uikit.min.css" />
+    <link href="https://fonts.googleapis.com/css?family=Dancing+Script" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Forum" rel="stylesheet">
+    <script src="uikit-3.0.0-rc.9/js/uikit.min.js"></script>
+    <script src="uikit-3.0.0-rc.9/js/uikit-icons.min.js"></script>
+    <script type="text/javascript" src="slider/engine1/jquery.js"></script>
+    
+    
+</head>
+<style>
+    *
+    {
+        box-sizing:border-box;
+    }
+    html,body
+    {
+        padding:0px;
+        margin:0px;
+        font-family: 'Josefin Sans', sans-serif;
+    }
+    
+    .heropage
+    {
+        height:100vh;
+        width:100%;
+        
+        position: relative;
+        background-size: cover;
+        background-attachment: scroll;
+    }
+    .header
+    {
+        height:30%;
+        width: 100%;
+        
+        position: absolute;
+        z-index: 100;
+    }
+    .logo
+    {
+        left:-5%;
+        top:-16.5%;
+        height:100%;
+        width:40%;
+        
+        color:rgba(255, 255, 255, 0.9);
+        font-size: 80px;
+        position: absolute;
+        transform:rotate(340deg);
+    }
+    .nav
+        {
+            width: 60%;
+            height: 8%;
+            top:5%;
+            left: 48%;
+            text-decoration: none;
+            position: absolute ;
+            z-index: 100;
+            position:fixed;
+            
+        }
+       
+        .container
+        {
+            bottom: 2%;
+            position: absolute;
+            z-index:300;
+            text-decoration: none;
+            
+        }
+
+        .ourmenu,.aboutourfood,.deals,.trendingnow,.feellove
+        {
+            border-right:2px solid grey;
+            z-index:400;
+            color:white;
+            text-decoration: none;
+        }
+        .search
+        {
+            color:white;
+        }
+        .ourmenu:hover
+        {
+            color:chocolate;
+            text-decoration: none;
+
+        }
+        .aboutourfood:hover
+        {
+            color:chocolate;;
+        }
+        .deals:hover
+        {
+            color:chocolate;
+        }
+        .trendingnow:hover
+        {
+            color:chocolate;
+        }
+        .feellove:hover
+        {
+            color:chocolate;
+        }
+        .search:hover
+        {
+            color:chocolate;
+        }
+    .logodata
+    {
+        top:20%;
+        left:40%;
+        transform: translate(-50%);
+        position: absolute;
+    }
+    .reasonable,.coffeecontent,.lovecontent,.smoky,.yummy123
+    {
+        font-family: 'Dancing Script', cursive;
+        font-size: 40px;
+    }
+    .middle
+    {
+        height:60vh;
+        width:100%;
+        background-attachment: scroll;
+        position: relative;
+        background: url("images/abstract-alcohol-art-274131.jpg");
+        background-size: cover;
+    }
+    .emails
+    {
+        
+        height:80%;
+        width:45%;
+        top:10%;
+        left:2%;
+        border-radius: 8px;
+        position: absolute;
+        background: url("images/coffee-contact-email-4831.jpg");
+        background-size: 100% 100%;
+    }
+    .emaildata
+    {
+        
+        left:50%;
+        transform: translateX(-50%);
+        color:rgb(192, 61, 204);
+        font-size: 40px;
+        position: absolute;
+        font-family: 'Dancing Script', cursive;
+        text-align: center;
+    }
+    .exclusive
+    {
+        right:2%;
+        height:80%;
+        width:45%;
+        top:10%;
+        border-radius: 8px;
+        position: absolute;
+        background: url("images/appetizer-bowl-bread-221143.jpg");
+        background-size: 100% 100%;
+    }
+    .exclusivedata
+    {
+        top:20%;
+        left:25%;
+        transform: translateX(-50%);
+        color:rgba(0,0,0,0.7);
+        font-size: 50px;
+        position: absolute;
+        font-family: 'Dancing Script', cursive;
+    }
+    form
+    {
+        width:80%;
+        height:60%;
+        background:transparent;
+        
+        position:relative;
+        justify-content: center;
+        align-items: center;
+        top:30%;
+        left:10%;
+        color: chocolate;
+    }
+    .input
+    {
+        top:10px;
+        width: 100%;
+        height:40px;
+        margin-top: 10px;
+        font-family:hello;
+        font-size: 18px;
+        padding-left: 5px;
+        outline:none;
+        background-color: transparent;
+        color: chocolate;
+        border-radius: 8px;
+    }
+    
+    input[type="submit"]
+            {
+                position: absolute;
+                left:40%;
+                bottom:10%;
+                transform:translateX(-50);
+                border:none;
+                width:200px;
+                height:50px;
+                border-radius: 5px;
+                color:white;
+                font-family: hello;
+                cursor:pointer;
+                font-size: 18px;
+                background: #ff9966;
+                transition: 1s;
+            }
+    .ending
+    {
+        height:80vh;
+        width:100%;
+        background-attachment: scroll;
+        position: relative;
+    }
+    .explorefoodcourt
+    {
+        
+        height:100%;
+        width:50%;
+        
+        position: absolute;
+        background: url("images/dish-egg-food-54455.jpg");
+        background-size: cover;
+    }
+    .explorefoodcourtdata
+    {
+        top:4%;
+        left:20%;
+        position: absolute;
+        font-size: 80px;
+        color:black;
+        font-family: 'Dancing Script', cursive;
+    }
+    .overlay
+    {
+        position:absolute;
+        
+        height:100%;
+        width:100%;
+        background: url("images/abstract-art-background-243971.jpg");
+        background-size: cover;
+        opacity:0.5;
+    }
+    .exploredrinkcourt
+    {
+        right:0%;
+        height:100%;
+        width:50%;
+        
+        position: absolute;
+        background: url("images/alcohol-beverage-black-background-1028637.jpg");
+        background-size: cover;
+    }
+    .exploredrinkcourtdata
+    {
+        top:4%;
+        left:20%;
+        position: absolute;
+        font-size: 80px;
+        color:black;
+        font-family: 'Dancing Script', cursive;
+    }
+    .overlaydrink
+    {
+        position:absolute;
+        
+        height:100%;
+        width:100%;
+        background: url("images/blue-bubble-calamity-287229.jpg");
+        background-size: cover;
+        opacity:0.5;
+    }
+    .footer
+    {
+        height:60vh;
+        width:100%;
+        
+        background: url("images/berry-blur-close-up-566888.jpg");
+        background-size: cover;
+        background-attachment: fixed;
+        display:flex;
+    }
+    .box1,.box2,.box3,.box4
+    {
+        width: 23%;
+        height: 70%;
+        border-radius: 8px;
+        position: relative;
+        margin-top: 40px;
+        margin-right:18px;
+        margin-left: 18px;
+        background-color:aqua;
+        opacity: 0.8;
+        right:0.8%;
+    }
+    .aboutending,.careers,.contactus,.services
+    {
+        padding:8px;
+        font-size:20px;
+    }
+    .end,.car,.cont,.serve
+    {
+        padding: 8px;
+        Text-decoration: none;
+    }
+</style>
+<body>
+    
+    <div class="heropage">
+    <div class="header">
+            <div class="logo">
+                <font class="logodata" face="mistral">Food drink</font>
+            </div>
+        <div class="nav">
+            <div class="container">
+                <div class="col justify-content-md-center">
+                    <div class="row">
+                        <div class="col-md-auto ourmenu">
+                            Our Menu
+                        </div>
+                        <div class="col-md-auto aboutourfood">
+                            About Our Food
+                        </div>
+                        <div class="col-md-auto feellove">
+                            Feel THE Love
+                        </div>
+                        <div class="col-md-auto trendingnow">
+                            Trending NOw
+                        </div>
+                        <div class="col-md-auto deals">
+                            Deals
+                        </div>
+                        <div class="col-md-auto search">
+                            Search
+                        </div>
+                    </div>
+                </div>
+                        
+            </div>
+        </div>
+    </div>            
+        <div id="wowslider-container1">
+            <div class="ws_images" uk-inline>
+                <ul class="uk-slider-items">
+                <li><img src="slider/data1/images/alcoholicbeveragesbarbeverage605408.jpg" height="100%" width="100%" alt="" title="" id="wows1_0"/>
+                    <div class="uk-position-center-right uk-text-center uk-overlay uk-light">
+                            <p class="reasonable" uk-slider-parallax="x: 100,-100; opacity:1,1,1">Drinks</p>
+                             <p class="reasonable" uk-slider-parallax="x: 200,-200">Reasonable.</p>
+                        </div>
+                </li>
+                <li><img src="slider/data1/images/beverageblackcoffeeblur1235717.jpg" height="100%" width="100%" alt="" title="" id="wows1_1"/>
+                    <div class="uk-position-center-left uk-text-center uk-overlay uk-light">
+                            <!-- <h2  uk-slider-parallax="x: 100,-100; opacity:1,1,1">Coffee</h2> -->
+                            <h1 class="coffeecontent"  uk-slider-parallax="x: 200,-200">Take enough coffee & rule the world.</h1>
+                        </div>
+                </li>
+                <li><img src="slider/data1/images/adult-affection-beard-842546.jpg" height="100%" width="100%" alt="" title="" id="wows1_2"/>
+                    <div class="uk-position-center-left uk-text-center uk-overlay uk-light">
+                            <!-- <h2  uk-slider-parallax="x: 100,-100; opacity:1,1,1">food &</h2> -->
+                            
+                            <h1 class="lovecontent" uk-slider-parallax="x: 200,-200">Food-Drinks & LOVE</h1>
+                        </div>
+                </li>
+                <li><img src="slider/data1/images/bowlchairscooking262918.jpg" height="100%" width="100%" alt="image slider" title="" id="wows1_3"/>
+                    <div class="uk-position-center-left uk-text-center uk-overlay uk-light">
+                            <!-- <h1  uk-slider-parallax="x: 100,-100; opacity:1,1,1">FOOD</h1> -->
+                            <h3 class="yummy123" uk-slider-parallax="x: 200,-200" >Ya-mamma so Yummy</h3>
+                        </div>
+                </li>
+                <li><img src="slider/data1/images/burgercheeseburgercloseup1199960.jpg" height="100%" width="100%" alt="" title="" id="wows1_4"/>
+                    <div class="uk-position-center-right uk-text-center uk-overlay uk-light">
+                            <h1 class="smoky"  uk-slider-parallax="x: 100,-100; opacity:1,1,1">BACON SMOKEHOUSE</h1>
+                            <h2 class="smoky" uk-slider-parallax="x: 200,-200">Smoky, Sweet & Savory</h2>
+                        </div>
+                </li>
+                </ul>
+            </div>
+            
+            <div class="ws_script" style="position:absolute;left:-99%"></div>
+            <div class="ws_shadow"></div>
+        </div>	
+    </div>
+    
+    <div class="middle">
+        <div class="emails">
+            <div class="emaildata">Join our e-mail list</div>
+            <form>
+                
+                <input type="text" class="input" placeholder="e-mail address...">
+                <input type="text" class="input" placeholder="Zip-Code...">
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+        <div class="exclusive">
+            <div class="exclusivedata">EXCLUSIVE<br> deals</div>
+        </div>
+    </div>
+    <div class="ending">
+        <div class="explorefoodcourt">
+            <div class="overlay">
+                <div class="explorefoodcourtdata">
+                    <p>Explore Our<br>Food Court</p>
+                </div>
+            </div>
+        </div>
+        <div class="exploredrinkcourt">
+                <div class="overlaydrink">
+                        <div class="exploredrinkcourtdata">
+                            <p>Explore Our<br>Drink Court</p>
+                        </div>
+                </div>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="box1">
+                <div class="aboutending">About Us</div>
+                <div class="row end">
+                    <div class="col-md-auto">Our History</div>
+                    <div class="w-100"></div>
+                    <div class="col-md-auto">Leadership Team</div>
+                    <div class="w-100"></div>
+                    <div class="col-md-auto">values in Action</div>
+                    <div class="w-100"></div>
+                    <div class="col-md-auto">Investor Relations</div>
+                    <div class="w-100"></div>
+                    <div class="col-md-auto">Real Estate</div>
+                    <div class="w-100"></div>
+                    <div class="col-md-auto">Digital Accessibility</div>
+                    <div class="w-100"></div>
+                    <div class="col-md-auto">Franchise info</div>
+                </div>
+        </div>
+        <div class="box2">
+                <div class="careers">Careers</div>
+                <div class="row car">
+                    <div class="col-6 col-sm-3">Education Oppotunities</div>
+                    <div class="w-100"></div>
+                    <div class="col-md-auto">Employee Perks</div>
+                    <div class="w-100"></div>
+                    <div class="col-md-auto">Meet Our People</div>
+                    <div class="w-100"></div>
+                    <div class="col-md-auto">Working with us</div>
+                    <div class="w-100"></div>
+                    <div class="col-md-auto">Apply Now</div>
+                    
+                </div>
+        </div>
+        <div class="box3">
+                <div class="contactus">Contact Us</div>
+                <div class="row cont">
+                    <div class="col-md-auto">Arch Card</div>
+                    <div class="w-100"></div>
+                    <div class="col-md-auto">Donations</div>
+                    <div class="w-100"></div>
+                    <div class="col-md-auto">Employment</div>
+                    <div class="w-100"></div>
+                    <div class="col-md-auto">Mobile App</div>
+                    <div class="w-100"></div>
+                    <div class="col-md-auto">Social Services</div>
+                    
+                </div>
+        </div>
+        <div class="box4">
+                <div class="services">Services</div>
+                <div class="row serve">
+                    <div class="col-md-auto">Wi-Fi</div>
+                    <div class="w-100"></div>
+                    <div class="col-md-auto">Arch Card</div>
+                    <div class="w-100"></div>
+                    <div class="col-md-auto">Play Places & Party</div>
+                    
+                    
+                    
+                </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="slider/engine1/wowslider.js"></script>
+    <script type="text/javascript" src="slider/engine1/script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+
+</body>
+</html>
